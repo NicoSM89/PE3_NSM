@@ -1,0 +1,25 @@
+<h1>Products</h1>
+
+{{#each payload}}
+  <div class="product-item">
+    <p>Id: {{this._id}}</p>
+    <p>Title: {{this.title}}</p>
+    <p>Description: {{this.description}}</p>
+    <p>Price: {{this.price}}</p>
+    <p>Status: {{this.status}}</p>
+    <p>Code: {{this.code}}</p>
+    <p>Stock: {{this.stock}}</p>
+    <button id="{{this._id}}">Add cart</button>
+  </div>
+{{/each}}
+
+{{#if hasPrevPage}}
+    <button><a href="/products?page={{prevPage}}">Previous</a></button>
+{{/if}}
+
+{{#if hasNextPage}}
+    <button><a href="/products?page={{nextPage}}">Next</a></button>
+{{/if}}
+
+
+<script src="js/products.js"></script>

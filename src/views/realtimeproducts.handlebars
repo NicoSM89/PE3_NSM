@@ -1,0 +1,55 @@
+<h1>View real time Products</h1>
+
+<h2>Add Product</h2>
+<form id='add-prod' class='add-prod'>
+    <div>
+        <label for="prod-title">Name
+            <input type="text" name='title'>
+        </label>
+    </div>
+    <div>
+        <label for="prod-desc">Description of product
+            <input type="text" name='description'>
+        </label>
+    </div>
+    <div>
+        <label for="prod-category">Category Product
+            <input type="text" name='category'>
+        </label>
+    </div>
+    <div>
+        <label for="prod-price">Price Product
+            <input type="text" name='price'>
+        </label>
+    </div>
+    <div>
+        <label for="prod-code">Code Product
+            <input type="text" name='code'>
+        </label>
+    </div>
+    <div>
+        <label for="prod-stock">Stock
+            <input type="text" name='stock'>
+        </label>
+    </div>
+    <button id='btn-form'>Add Product</button>
+</form>
+
+<div id="listadoProductos" class="product-container">
+    {{#each data}}
+      <div class="product-item">
+        <p>Id: {{this._id}}</p>
+        <p>Title: {{this.title}}</p>
+        <p>Description: {{this.description}}</p>
+        <p>Price: {{this.price}}</p>
+        <p>Status: {{this.status}}</p>
+        <p>Code: {{this.code}}</p>
+        <p>Stock: {{this.stock}}</p>
+        <button id= {{this._id}} class='btn-del'>Eliminar</button>
+      </div>
+    {{/each}}
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realTimeProducts.js"></script>
